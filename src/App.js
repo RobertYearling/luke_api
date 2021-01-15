@@ -4,6 +4,8 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import People from './components/People';
 import Planets from './components/Planets';
+import NotFound from './components/NotFound';
+
 function App() {
   const [selected, setSelected] = useState("people");
   const [id, setId] = useState("1");
@@ -26,10 +28,11 @@ function App() {
             <Link to={link}><button className="btn-primary">Search</button></Link>
           </form>
         </div>
-        <div className="row mt-50">
+        <div className="row">
           <Router>
             <Planets path="/planets/:id" />
             <People path="/people/:id" />
+            <NotFound path = "*"></NotFound>
           </Router>
         </div>
       </div>
